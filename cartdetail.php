@@ -22,8 +22,8 @@ $user=$_SESSION['username'];
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-    <div class="background-image"></div>
     <div class="card" style="padding:5vw;margin-top:20px;">
+    <div class="card-text">
     <?php
         //$idtobeadded = $_GET['bookid'];
         $host="localhost"; // Host name 
@@ -69,7 +69,8 @@ $user=$_SESSION['username'];
         <th>$total</th>
         </tr>";
         echo "</table";
-        ?>      
+        ?>     
+        </div> 
         </div>
     </body>
 </html>

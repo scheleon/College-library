@@ -62,10 +62,8 @@ if(!(isset($_SESSION['username']) && $_SESSION['username'] != ""))
          <div class="col-xs-6 col-md-4 col-md-3 col-lg-2"  style="margin-bottom:60px;">
             <div id="<?php echo $row['bookid']."res45";?>" class="card card-default zoom" style="opacity:0.8;">
             <img class="card-img-top" src="pictures/<?php echo $row['bookid'];?>.jpg" alt="Card image cap"/>
-            <div class="card-body">
-              
+            <div class="card-body">             
               <div class="card-title"><?php echo $row['bookname']; ?></div>
-              <div class="card-text"><?php echo $row['bookdesc']; ?></div>
               <div class="card-footer"> <tr>
                     <td id="price"><?php echo "Price"; ?></td>
                     <td>:</td>

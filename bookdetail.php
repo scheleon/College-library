@@ -52,8 +52,7 @@ $user=$_SESSION['username'];
                 <button id="bag" type="button" class="dropdown-item btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">
                     Bag
                 </button>
-                <a id="bag" type="button" class="dropdown-item btn btn-primary" href="first.php">Home</a>
-
+                <a class="dropdown-item btn btn-primary" href="first.php">Home</a>
                 </div>
             </li>
             </ul>
@@ -66,10 +65,10 @@ $user=$_SESSION['username'];
         <div class="background-image"></div>
 
         <div class="content">
-            <div class="row">
-        <div class="bookdetail col-7 card flex-row flex-wrap">
-        <div class="card-header border-0" style="padding:10px;margin-top:10px;margin-right:30px;margin-bottom:10px;"> 
-            <img src="pictures/<?php echo $bookid?>.jpg" alt="<?php echo $bookname?>">
+            <center>
+      <div class="bookdetail col-7 card flex-row flex-wrap">
+        <div class="card-img-top" style="margin-top:10px;margin-bottom:10px;"> 
+            <img src="pictures/<?php echo $bookid?>.jpg" alt="<?php echo $bookname?>" style="">
         </div>
                 <div class="card-block">
                     
@@ -78,30 +77,30 @@ $user=$_SESSION['username'];
                     <hr>
                     <?php echo "Brought to the library on ".$result['date']?>
                     <hr>
-                    <p class="card-text">here is the book</p>
+                    <p class="card-text"><?php echo $result['bookdesc'];?></p>
                     <p class="card-footer">
                     <?php echo "Total units available : ".$result['quantity'];?>
+                    <div class="card addtobag"  style="padding:10px;">
+                                <div class="card-footer" style="padding:10px;margin-top:10px;"> <table>
+                                        <tr>
+                                        <td>Available Units</td>
+                                        <td>:</td>
+                                        <td><?php echo $result['available'];?></td>
+                                        </tr>
+                                        <tr>
+                                        <td id="price"><?php echo "Price"; ?></td>
+                                        <td>:</td>
+                                        <td><?php echo $result['price']; ?></td>
+                                        </tr>
+                                        </table>
+                                        </div>
+                            <div class="card-text" style="padding:10px;">
+                            <a href="http://localhost/addtocart.php?bookid=<?php echo $result['bookid'];?>" type="button" class="btn btn-primary btn-zoom btn-lg" style="margin-top: 10px;">Add to Bag</a>
+                            </div>
+                        </div>
                     </p>
                 </div>
-        </div>
-        <div class="col-1"></div>
-        <div class="card addtobag col-3 card-default addtobag my-auto">
-                    <div class="card-footer" style="padding:10px;margin-top:10px;"> <table>
-                            <tr>
-                            <td>Available Units</td>
-                            <td><?php echo $result['available'];?></td>
-                            </tr>
-                            <tr>
-                            <td id="price"><?php echo "Price"; ?></td>
-                            <td>:</td>
-                            <td><?php echo $result['price']; ?></td>
-                            </tr>
-                            </table>
-                            </div>
-                <div class="card-text" style="padding:10px;">
-                <a href="http://localhost/addtocart.php?bookid=<?php echo $result['bookid'];?>" type="button" class="btn btn-zoom btn-sm btn-block" style="margin-top: 10px;">Add to Bag</a>
-                </div>
-            </div>
+        </center>
         </div>
         </div>
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -125,7 +124,7 @@ $user=$_SESSION['username'];
         </div>
         <script>
             document.getElementById("pay").addEventListener("click", function(){
-                window.open("http://localhost/payment.php?total=<?php echo $total;?>","_self")
+                window.open("http://localhost/pay.php?total=<?php echo $total;?>","_self")
             },false);
         </script>
         </div>

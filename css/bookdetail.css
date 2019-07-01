@@ -16,39 +16,21 @@
     filter: blur(5px);
   }
   .content {
-    position: relative;
+    /* position: relative;
     overflow-y:auto;
     position: fixed;
     left: 0;
-    right: 0;
+    right: 0; */
     margin-left: 20px;
     margin-right: 20px;
   }
-  .btn-zoom {
-    background-color: #008CBA !important;
-    padding: 10px;
-    transition: transform .4s;
-  }
-  
-  .btn-zoom:hover {
-    cursor: pointer !important;
-    background-color: #4CAF50 !important;
-  }
-  .card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
-} .card-header {
-    /* height: 38vw; */
-    object-fit: cover;
-}
- .row {
+ /* .row {
    left: 0;
    right: 0;
    margin-top:2vw;
    overflow: hidden;
    position: fixed;
- }
+ } */
  .table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -60,7 +42,6 @@ td, th {
   text-align: left;
   padding: 8px;
 }
-
 tr:nth-child(even) {
   background-color: #dddddd;
 }

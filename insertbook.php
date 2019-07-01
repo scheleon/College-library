@@ -42,6 +42,13 @@ echo mysqli_error($con);
             echo "Error updating record: " . mysqli_error($con);
         }
     } else {
+        // strip tags to avoid breaking any html
+        $string = strip_tags($bookdesc);
+        if (strlen($bookdesc) >= 100) {
+            // truncate string
+            $bookdesc = substr($bookdesc, 0, 100);
+            $bookdesc = $bookdesc."...";
+        }
 	$sql = "Insert into books VALUES ('$bookid','$bookname','$bookdesc','$author','$date','$status','$price','$quantity', '$quantity')";
     $result = mysqli_query($con,$sql);
     if ($result) {
